@@ -7,6 +7,9 @@
 //
 
 #import "MementoAppDelegate.h"
+#import "MementoTimeViewController.h"
+#import "MementoSpaceViewController.h"
+#import "MementoCameraViewController.h"
 
 @implementation MementoAppDelegate
 
@@ -14,6 +17,16 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+
+    MementoTimeViewController *tvc = [[MementoTimeViewController alloc] init];
+    MementoSpaceViewController *svc = [[MementoSpaceViewController alloc] init];
+    MementoCameraViewController *cvc = [[MementoCameraViewController alloc] init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    NSArray *viewControllers = [NSArray arrayWithObjects:tvc, svc, cvc, nil];
+    [tabBarController setViewControllers:viewControllers];
+    [[self window] setRootViewController:tabBarController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
