@@ -19,6 +19,8 @@
 		AA69694F1809F63C00FDCB16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969371809F63C00FDCB16 /* UIKit.framework */; };
 		AA6969571809F63C00FDCB16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA6969551809F63C00FDCB16 /* InfoPlist.strings */; };
 		AA6969591809F63C00FDCB16 /* MementoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6969581809F63C00FDCB16 /* MementoTests.m */; };
+		AAE6F91A1809FE320012FE45 /* MementoSpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F9191809FE320012FE45 /* MementoSpaceViewController.m */; };
+		AAE6F91D1809FE400012FE45 /* MementoTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F91C1809FE400012FE45 /* MementoTimeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		AA6969541809F63C00FDCB16 /* MementoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MementoTests-Info.plist"; sourceTree = "<group>"; };
 		AA6969561809F63C00FDCB16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA6969581809F63C00FDCB16 /* MementoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MementoTests.m; sourceTree = "<group>"; };
+		AAE6F9181809FE320012FE45 /* MementoSpaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoSpaceViewController.h; sourceTree = "<group>"; };
+		AAE6F9191809FE320012FE45 /* MementoSpaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoSpaceViewController.m; sourceTree = "<group>"; };
+		AAE6F91B1809FE400012FE45 /* MementoTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoTimeViewController.h; sourceTree = "<group>"; };
+		AAE6F91C1809FE400012FE45 /* MementoTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoTimeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 			children = (
 				AA6969421809F63C00FDCB16 /* MementoAppDelegate.h */,
 				AA6969431809F63C00FDCB16 /* MementoAppDelegate.m */,
+				AAE6F91F1809FE630012FE45 /* Time */,
+				AAE6F91E1809FE490012FE45 /* Space */,
 				AA6969451809F63C00FDCB16 /* Images.xcassets */,
 				AA69693A1809F63C00FDCB16 /* Supporting Files */,
 			);
@@ -142,6 +150,24 @@
 				AA6969551809F63C00FDCB16 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE6F91E1809FE490012FE45 /* Space */ = {
+			isa = PBXGroup;
+			children = (
+				AAE6F9181809FE320012FE45 /* MementoSpaceViewController.h */,
+				AAE6F9191809FE320012FE45 /* MementoSpaceViewController.m */,
+			);
+			name = Space;
+			sourceTree = "<group>";
+		};
+		AAE6F91F1809FE630012FE45 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				AAE6F91B1809FE400012FE45 /* MementoTimeViewController.h */,
+				AAE6F91C1809FE400012FE45 /* MementoTimeViewController.m */,
+			);
+			name = Time;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6969441809F63C00FDCB16 /* MementoAppDelegate.m in Sources */,
+				AAE6F91D1809FE400012FE45 /* MementoTimeViewController.m in Sources */,
+				AAE6F91A1809FE320012FE45 /* MementoSpaceViewController.m in Sources */,
 				AA6969401809F63C00FDCB16 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +470,7 @@
 				AA69695E1809F63C00FDCB16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA69695F1809F63C00FDCB16 /* Build configuration list for PBXNativeTarget "MementoTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +479,7 @@
 				AA6969611809F63C00FDCB16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
