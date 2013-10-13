@@ -134,6 +134,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                     CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
                     MementoLocationCoordinate2D *mLocation = [[MementoLocationCoordinate2D alloc] initWithLocation:location.coordinate];
                     [[MementoPictureStore sharedStore] addLocation:mLocation];
+                    [gridView reloadData];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 } failureBlock:nil];
             };
