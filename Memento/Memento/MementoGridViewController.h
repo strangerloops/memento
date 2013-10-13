@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoTimelineViewController : UIViewController
+@interface MementoGridViewController : UIViewController
 
 @end

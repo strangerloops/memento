@@ -20,8 +20,8 @@
 		AA6969571809F63C00FDCB16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA6969551809F63C00FDCB16 /* InfoPlist.strings */; };
 		AA6969591809F63C00FDCB16 /* MementoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6969581809F63C00FDCB16 /* MementoTests.m */; };
 		AAE6F91A1809FE320012FE45 /* MementoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F9191809FE320012FE45 /* MementoMapViewController.m */; };
-		AAE6F91D1809FE400012FE45 /* MementoTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F91C1809FE400012FE45 /* MementoTimelineViewController.m */; };
-		AAE6F923180A017F0012FE45 /* MementoTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F922180A017F0012FE45 /* MementoTimelineViewController.xib */; };
+		AAE6F91D1809FE400012FE45 /* MementoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F91C1809FE400012FE45 /* MementoGridViewController.m */; };
+		AAE6F923180A017F0012FE45 /* MementoGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F922180A017F0012FE45 /* MementoGridViewController.xib */; };
 		AAE6F925180A01EA0012FE45 /* MementoMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F924180A01EA0012FE45 /* MementoMapViewController.xib */; };
 		AAE6F928180A082C0012FE45 /* MementoCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F927180A082C0012FE45 /* MementoCameraViewController.m */; };
 		AAE6F92B180A085A0012FE45 /* MementoCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F92A180A085A0012FE45 /* MementoCameraViewController.xib */; };
@@ -59,9 +59,9 @@
 		AA6969581809F63C00FDCB16 /* MementoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MementoTests.m; sourceTree = "<group>"; };
 		AAE6F9181809FE320012FE45 /* MementoMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoMapViewController.h; sourceTree = "<group>"; };
 		AAE6F9191809FE320012FE45 /* MementoMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoMapViewController.m; sourceTree = "<group>"; };
-		AAE6F91B1809FE400012FE45 /* MementoTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoTimelineViewController.h; sourceTree = "<group>"; };
-		AAE6F91C1809FE400012FE45 /* MementoTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoTimelineViewController.m; sourceTree = "<group>"; };
-		AAE6F922180A017F0012FE45 /* MementoTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoTimelineViewController.xib; sourceTree = "<group>"; };
+		AAE6F91B1809FE400012FE45 /* MementoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoGridViewController.h; sourceTree = "<group>"; };
+		AAE6F91C1809FE400012FE45 /* MementoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoGridViewController.m; sourceTree = "<group>"; };
+		AAE6F922180A017F0012FE45 /* MementoGridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoGridViewController.xib; sourceTree = "<group>"; };
 		AAE6F924180A01EA0012FE45 /* MementoMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoMapViewController.xib; sourceTree = "<group>"; };
 		AAE6F926180A082C0012FE45 /* MementoCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoCameraViewController.h; sourceTree = "<group>"; };
 		AAE6F927180A082C0012FE45 /* MementoCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoCameraViewController.m; sourceTree = "<group>"; };
@@ -184,9 +184,9 @@
 		AAE6F91F1809FE630012FE45 /* Time */ = {
 			isa = PBXGroup;
 			children = (
-				AAE6F91B1809FE400012FE45 /* MementoTimelineViewController.h */,
-				AAE6F91C1809FE400012FE45 /* MementoTimelineViewController.m */,
-				AAE6F922180A017F0012FE45 /* MementoTimelineViewController.xib */,
+				AAE6F91B1809FE400012FE45 /* MementoGridViewController.h */,
+				AAE6F91C1809FE400012FE45 /* MementoGridViewController.m */,
+				AAE6F922180A017F0012FE45 /* MementoGridViewController.xib */,
 			);
 			name = Time;
 			sourceTree = "<group>";
@@ -270,6 +270,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = strangerware;
 				TargetAttributes = {
+					AA69692F1809F63C00FDCB16 = {
+						DevelopmentTeam = TTRRU3DK65;
+					};
 					AA69694A1809F63C00FDCB16 = {
 						TestTargetID = AA69692F1809F63C00FDCB16;
 					};
@@ -299,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA69693E1809F63C00FDCB16 /* InfoPlist.strings in Resources */,
-				AAE6F923180A017F0012FE45 /* MementoTimelineViewController.xib in Resources */,
+				AAE6F923180A017F0012FE45 /* MementoGridViewController.xib in Resources */,
 				AAE6F92B180A085A0012FE45 /* MementoCameraViewController.xib in Resources */,
 				AA6969461809F63C00FDCB16 /* Images.xcassets in Resources */,
 				AAE6F925180A01EA0012FE45 /* MementoMapViewController.xib in Resources */,
@@ -324,7 +327,7 @@
 				AA6969441809F63C00FDCB16 /* MementoAppDelegate.m in Sources */,
 				AAE6F928180A082C0012FE45 /* MementoCameraViewController.m in Sources */,
 				AAE6F931180A20A00012FE45 /* MementoPicture.m in Sources */,
-				AAE6F91D1809FE400012FE45 /* MementoTimelineViewController.m in Sources */,
+				AAE6F91D1809FE400012FE45 /* MementoGridViewController.m in Sources */,
 				AAE6F935180A23860012FE45 /* MementoPictureStore.m in Sources */,
 				AAE6F91A1809FE320012FE45 /* MementoMapViewController.m in Sources */,
 				AA6969401809F63C00FDCB16 /* main.m in Sources */,
@@ -446,10 +449,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memento/Memento-Prefix.pch";
 				INFOPLIST_FILE = "Memento/Memento-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -459,10 +465,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memento/Memento-Prefix.pch";
 				INFOPLIST_FILE = "Memento/Memento-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

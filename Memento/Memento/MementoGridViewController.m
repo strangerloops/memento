@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 strangerware. All rights reserved.
 //
 
-#import "MementoTimelineViewController.h"
+#import "MementoGridViewController.h"
 
-@implementation MementoTimelineViewController
+@implementation MementoGridViewController
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle
 {
     NSBundle *appBundle = [NSBundle mainBundle];
-    self = [super initWithNibName:@"MementoTimelineViewController" bundle:appBundle];
+    self = [super initWithNibName:@"MementoGridViewController" bundle:appBundle];
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Timeline"];
