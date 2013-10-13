@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoGridViewController : UICollectionViewController {
+@interface MementoGridViewController : UIViewController {
     IBOutlet UICollectionView *collectionView;
 }
 

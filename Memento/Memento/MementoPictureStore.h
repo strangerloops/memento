@@ -17,6 +17,6 @@
 + (MementoPictureStore *)sharedStore;
 
 - (NSMutableArray *)allPictures;
-- (void)addPicture:(MementoPicture *)p;
+- (void)addPicture:(UIImage *)p;
 
 @end
