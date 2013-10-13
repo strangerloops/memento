@@ -40,8 +40,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    MementoLocationCoordinate2D *mLocation =[[[MementoPictureStore sharedStore] allLocations] objectAtIndex:[self index]];
+    [self setLocation:mLocation->location];
+    
     [[self photoView] setImage:[self photo]];
     [[[self photoView] layer] setMasksToBounds:YES];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:_location.latitude longitude:_location.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
+        [[self locationLabel] setText:[NSString stringWithFormat:@"%@, %@", [[placemarks firstObject] locality], [[placemarks firstObject] administrativeArea]]];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,9 +61,7 @@
     
     Class mapItemClass = [MKMapItem class];
     if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
-        MementoLocationCoordinate2D *mLocation = [[[MementoPictureStore sharedStore] allLocations] objectAtIndex:[self index]];
-        NSLog(@"indexpath: %d", [self index]);
-        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:mLocation->location addressDictionary:nil];
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:[self location] addressDictionary:nil];
         MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
         [mapItem setName:@"My Place"];
         NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};

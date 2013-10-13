@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface MementoPhotoViewController : UIViewController
 
@@ -14,6 +15,7 @@
 @property (strong, nonatomic) UIImage *photo;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (nonatomic) NSInteger index;
+@property (nonatomic) CLLocationCoordinate2D location;
 
 // Inits
 - (id)initWithPhoto:(UIImage *)photo andIndex:(NSInteger)index;
