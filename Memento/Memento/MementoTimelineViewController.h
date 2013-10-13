@@ -1,5 +1,5 @@
 //
-//  MementoSpaceViewController.h
+//  MementoTimeViewController.h
 //  Memento
 //
 //  Created by   on 10/12/13.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoSpaceViewController : UIViewController
+@interface MementoTimelineViewController : UIViewController
 
 @end

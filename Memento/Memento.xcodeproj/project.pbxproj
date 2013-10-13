@@ -19,10 +19,10 @@
 		AA69694F1809F63C00FDCB16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969371809F63C00FDCB16 /* UIKit.framework */; };
 		AA6969571809F63C00FDCB16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA6969551809F63C00FDCB16 /* InfoPlist.strings */; };
 		AA6969591809F63C00FDCB16 /* MementoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6969581809F63C00FDCB16 /* MementoTests.m */; };
-		AAE6F91A1809FE320012FE45 /* MementoSpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F9191809FE320012FE45 /* MementoSpaceViewController.m */; };
-		AAE6F91D1809FE400012FE45 /* MementoTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F91C1809FE400012FE45 /* MementoTimeViewController.m */; };
-		AAE6F923180A017F0012FE45 /* MementoTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F922180A017F0012FE45 /* MementoTimeViewController.xib */; };
-		AAE6F925180A01EA0012FE45 /* MementoSpaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F924180A01EA0012FE45 /* MementoSpaceViewController.xib */; };
+		AAE6F91A1809FE320012FE45 /* MementoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F9191809FE320012FE45 /* MementoMapViewController.m */; };
+		AAE6F91D1809FE400012FE45 /* MementoTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F91C1809FE400012FE45 /* MementoTimelineViewController.m */; };
+		AAE6F923180A017F0012FE45 /* MementoTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F922180A017F0012FE45 /* MementoTimelineViewController.xib */; };
+		AAE6F925180A01EA0012FE45 /* MementoMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F924180A01EA0012FE45 /* MementoMapViewController.xib */; };
 		AAE6F928180A082C0012FE45 /* MementoCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F927180A082C0012FE45 /* MementoCameraViewController.m */; };
 		AAE6F92B180A085A0012FE45 /* MementoCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F92A180A085A0012FE45 /* MementoCameraViewController.xib */; };
 		AAE6F92D180A19730012FE45 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE6F92C180A19730012FE45 /* MobileCoreServices.framework */; };
@@ -57,12 +57,12 @@
 		AA6969541809F63C00FDCB16 /* MementoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MementoTests-Info.plist"; sourceTree = "<group>"; };
 		AA6969561809F63C00FDCB16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA6969581809F63C00FDCB16 /* MementoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MementoTests.m; sourceTree = "<group>"; };
-		AAE6F9181809FE320012FE45 /* MementoSpaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoSpaceViewController.h; sourceTree = "<group>"; };
-		AAE6F9191809FE320012FE45 /* MementoSpaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoSpaceViewController.m; sourceTree = "<group>"; };
-		AAE6F91B1809FE400012FE45 /* MementoTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoTimeViewController.h; sourceTree = "<group>"; };
-		AAE6F91C1809FE400012FE45 /* MementoTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoTimeViewController.m; sourceTree = "<group>"; };
-		AAE6F922180A017F0012FE45 /* MementoTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoTimeViewController.xib; sourceTree = "<group>"; };
-		AAE6F924180A01EA0012FE45 /* MementoSpaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoSpaceViewController.xib; sourceTree = "<group>"; };
+		AAE6F9181809FE320012FE45 /* MementoMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoMapViewController.h; sourceTree = "<group>"; };
+		AAE6F9191809FE320012FE45 /* MementoMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoMapViewController.m; sourceTree = "<group>"; };
+		AAE6F91B1809FE400012FE45 /* MementoTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoTimelineViewController.h; sourceTree = "<group>"; };
+		AAE6F91C1809FE400012FE45 /* MementoTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoTimelineViewController.m; sourceTree = "<group>"; };
+		AAE6F922180A017F0012FE45 /* MementoTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoTimelineViewController.xib; sourceTree = "<group>"; };
+		AAE6F924180A01EA0012FE45 /* MementoMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoMapViewController.xib; sourceTree = "<group>"; };
 		AAE6F926180A082C0012FE45 /* MementoCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoCameraViewController.h; sourceTree = "<group>"; };
 		AAE6F927180A082C0012FE45 /* MementoCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoCameraViewController.m; sourceTree = "<group>"; };
 		AAE6F92A180A085A0012FE45 /* MementoCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoCameraViewController.xib; sourceTree = "<group>"; };
@@ -174,9 +174,9 @@
 		AAE6F91E1809FE490012FE45 /* Space */ = {
 			isa = PBXGroup;
 			children = (
-				AAE6F9181809FE320012FE45 /* MementoSpaceViewController.h */,
-				AAE6F9191809FE320012FE45 /* MementoSpaceViewController.m */,
-				AAE6F924180A01EA0012FE45 /* MementoSpaceViewController.xib */,
+				AAE6F9181809FE320012FE45 /* MementoMapViewController.h */,
+				AAE6F9191809FE320012FE45 /* MementoMapViewController.m */,
+				AAE6F924180A01EA0012FE45 /* MementoMapViewController.xib */,
 			);
 			name = Space;
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 		AAE6F91F1809FE630012FE45 /* Time */ = {
 			isa = PBXGroup;
 			children = (
-				AAE6F91B1809FE400012FE45 /* MementoTimeViewController.h */,
-				AAE6F91C1809FE400012FE45 /* MementoTimeViewController.m */,
-				AAE6F922180A017F0012FE45 /* MementoTimeViewController.xib */,
+				AAE6F91B1809FE400012FE45 /* MementoTimelineViewController.h */,
+				AAE6F91C1809FE400012FE45 /* MementoTimelineViewController.m */,
+				AAE6F922180A017F0012FE45 /* MementoTimelineViewController.xib */,
 			);
 			name = Time;
 			sourceTree = "<group>";
@@ -299,10 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA69693E1809F63C00FDCB16 /* InfoPlist.strings in Resources */,
-				AAE6F923180A017F0012FE45 /* MementoTimeViewController.xib in Resources */,
+				AAE6F923180A017F0012FE45 /* MementoTimelineViewController.xib in Resources */,
 				AAE6F92B180A085A0012FE45 /* MementoCameraViewController.xib in Resources */,
 				AA6969461809F63C00FDCB16 /* Images.xcassets in Resources */,
-				AAE6F925180A01EA0012FE45 /* MementoSpaceViewController.xib in Resources */,
+				AAE6F925180A01EA0012FE45 /* MementoMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,9 +324,9 @@
 				AA6969441809F63C00FDCB16 /* MementoAppDelegate.m in Sources */,
 				AAE6F928180A082C0012FE45 /* MementoCameraViewController.m in Sources */,
 				AAE6F931180A20A00012FE45 /* MementoPicture.m in Sources */,
-				AAE6F91D1809FE400012FE45 /* MementoTimeViewController.m in Sources */,
+				AAE6F91D1809FE400012FE45 /* MementoTimelineViewController.m in Sources */,
 				AAE6F935180A23860012FE45 /* MementoPictureStore.m in Sources */,
-				AAE6F91A1809FE320012FE45 /* MementoSpaceViewController.m in Sources */,
+				AAE6F91A1809FE320012FE45 /* MementoMapViewController.m in Sources */,
 				AA6969401809F63C00FDCB16 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

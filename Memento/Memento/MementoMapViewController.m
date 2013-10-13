@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 strangerware. All rights reserved.
 //
 
-#import "MementoSpaceViewController.h"
+#import "MementoMapViewController.h"
 
-@implementation MementoSpaceViewController
+@implementation MementoMapViewController
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle
 {
     NSBundle *appBundle = [NSBundle mainBundle];
-    self = [super initWithNibName:@"MementoSpaceViewController" bundle:appBundle];
+    self = [super initWithNibName:@"MementoMapViewController" bundle:appBundle];
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Map"];

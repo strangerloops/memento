@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 strangerware. All rights reserved.
 //
 
-#import "MementoTimeViewController.h"
+#import "MementoTimelineViewController.h"
 
-@implementation MementoTimeViewController
+@implementation MementoTimelineViewController
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle
 {
     NSBundle *appBundle = [NSBundle mainBundle];
-    self = [super initWithNibName:@"MementoTimeViewController" bundle:appBundle];
+    self = [super initWithNibName:@"MementoTimelineViewController" bundle:appBundle];
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Timeline"];
