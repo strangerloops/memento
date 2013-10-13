@@ -33,6 +33,8 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     [gridView setCollectionViewLayout:flowLayout];
+    
+    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showCameraMenu)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -54,6 +56,7 @@
     
     return cell;
 }
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [[[MementoPictureStore sharedStore] allThumbnails] count];
 }

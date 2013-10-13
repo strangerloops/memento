@@ -17,17 +17,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-
+    
     MementoGridViewController *tvc = [[MementoGridViewController alloc] init];
-    MementoMapViewController *svc = [[MementoMapViewController alloc] init];
-    MementoCameraViewController *cvc = [[MementoCameraViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tvc];
     
-    
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    NSArray *viewControllers = [NSArray arrayWithObjects:tvc, svc, cvc, nil];
-    [tabBarController setViewControllers:viewControllers];
-    [[self window] setRootViewController:tabBarController];
+    [[self window] setRootViewController:navigationController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
