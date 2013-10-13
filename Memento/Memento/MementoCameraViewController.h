@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoCameraViewController : UIViewController
+@interface MementoCameraViewController : UIViewController <UIImagePickerControllerDelegate>
+
+@property BOOL newMedia;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+- (IBAction)useCamera:(id)sender;
+- (IBAction)useCameraRoll:(id)sender;
 
 @end

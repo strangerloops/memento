@@ -25,6 +25,7 @@
 		AAE6F925180A01EA0012FE45 /* MementoSpaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F924180A01EA0012FE45 /* MementoSpaceViewController.xib */; };
 		AAE6F928180A082C0012FE45 /* MementoCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE6F927180A082C0012FE45 /* MementoCameraViewController.m */; };
 		AAE6F92B180A085A0012FE45 /* MementoCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE6F92A180A085A0012FE45 /* MementoCameraViewController.xib */; };
+		AAE6F92D180A19730012FE45 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE6F92C180A19730012FE45 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		AAE6F926180A082C0012FE45 /* MementoCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoCameraViewController.h; sourceTree = "<group>"; };
 		AAE6F927180A082C0012FE45 /* MementoCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoCameraViewController.m; sourceTree = "<group>"; };
 		AAE6F92A180A085A0012FE45 /* MementoCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoCameraViewController.xib; sourceTree = "<group>"; };
+		AAE6F92C180A19730012FE45 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE6F92D180A19730012FE45 /* MobileCoreServices.framework in Frameworks */,
 				AA6969361809F63C00FDCB16 /* CoreGraphics.framework in Frameworks */,
 				AA6969381809F63C00FDCB16 /* UIKit.framework in Frameworks */,
 				AA6969341809F63C00FDCB16 /* Foundation.framework in Frameworks */,
@@ -111,6 +114,7 @@
 		AA6969321809F63C00FDCB16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAE6F92C180A19730012FE45 /* MobileCoreServices.framework */,
 				AA6969331809F63C00FDCB16 /* Foundation.framework */,
 				AA6969351809F63C00FDCB16 /* CoreGraphics.framework */,
 				AA6969371809F63C00FDCB16 /* UIKit.framework */,
