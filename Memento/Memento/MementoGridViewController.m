@@ -169,7 +169,7 @@ finishedSavingWithError:(NSError *)error
 // UICollectionViewDelegate protocol methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    MementoPhotoViewController *photoVC = [[MementoPhotoViewController alloc] initWithPhoto:[[[MementoPictureStore sharedStore] allThumbnails] objectAtIndex:[indexPath row]]];
+    MementoPhotoViewController *photoVC = [[MementoPhotoViewController alloc] initWithPhoto:[[[MementoPictureStore sharedStore] allPictures] objectAtIndex:[indexPath row]]];
     NSLog(@"%d", [indexPath row]);
     [[self navigationController] pushViewController:photoVC animated:YES];
 }
