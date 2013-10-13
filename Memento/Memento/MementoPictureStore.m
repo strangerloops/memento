@@ -47,4 +47,13 @@
     [[[MementoPictureStore sharedStore] allPictures] addObject:p];
 }
 
+// UICollectionViewDataSource protocol methods
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[[MementoPictureStore sharedStore] allPictures] count];
+}
+
 @end

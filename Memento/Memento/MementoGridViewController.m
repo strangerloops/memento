@@ -7,6 +7,7 @@
 //
 
 #import "MementoGridViewController.h"
+#import "MementoPictureStore.h"
 
 @implementation MementoGridViewController
 

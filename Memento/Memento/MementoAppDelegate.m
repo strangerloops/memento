@@ -22,6 +22,8 @@
     MementoMapViewController *svc = [[MementoMapViewController alloc] init];
     MementoCameraViewController *cvc = [[MementoCameraViewController alloc] init];
     
+    
+    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     NSArray *viewControllers = [NSArray arrayWithObjects:tvc, svc, cvc, nil];
     [tabBarController setViewControllers:viewControllers];
