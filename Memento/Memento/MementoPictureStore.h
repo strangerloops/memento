@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MementoPicture.h"
 
-@interface MementoPictureStore : NSObject
+@interface MementoPictureStore : NSObject <UICollectionViewDataSource>
 {
     NSMutableArray *allPictures;
 }
