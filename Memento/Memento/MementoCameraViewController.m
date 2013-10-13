@@ -32,8 +32,7 @@
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
     {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];

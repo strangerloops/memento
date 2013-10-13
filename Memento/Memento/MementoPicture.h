@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoPicture : NSObject
+@interface MementoPicture : UIImage
 
 @end

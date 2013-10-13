@@ -25,4 +25,9 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // iterate through sharedstore's array of pictures, display 
+}
+
 @end
