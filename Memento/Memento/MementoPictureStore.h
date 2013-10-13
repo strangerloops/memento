@@ -10,13 +10,13 @@
 #import "MementoPicture.h"
 
 @interface MementoPictureStore : NSObject
-{
-    NSMutableArray *allPictures;
-}
+
+@property (readonly, strong, nonatomic) NSMutableArray *allPictures;
+@property (readonly, strong, nonatomic) NSMutableArray *allThumbnails;
 
 + (MementoPictureStore *)sharedStore;
 
-- (NSMutableArray *)allPictures;
 - (void)addPicture:(UIImage *)p;
+- (void)addThumbnail:(UIImage *)t;
 
 @end

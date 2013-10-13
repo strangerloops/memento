@@ -16,4 +16,6 @@
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
 
++ (UIImage *)thumbnailOf:(UIImage *)image;
+
 @end

@@ -17,7 +17,7 @@
     self = [super initWithNibName:@"MementoGridViewController" bundle:appBundle];
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
-        [tbi setTitle:@"Timeline"];
+        [tbi setTitle:@"Photos"];
     }
     
     return self;
@@ -29,7 +29,7 @@
     [gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setItemSize:CGSizeMake(200, 200)];
+    [flowLayout setItemSize:CGSizeMake(100, 100)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     [gridView setCollectionViewLayout:flowLayout];
@@ -47,14 +47,15 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[[[MementoPictureStore sharedStore] allPictures] objectAtIndex:[indexPath row]]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[[[MementoPictureStore sharedStore] allThumbnails] objectAtIndex:[indexPath row]]];
     [[cell contentView] addSubview:imageView];
-    NSLog(@"%d", [[[MementoPictureStore sharedStore] allPictures] count]);
+    NSLog(@"%d", [[[MementoPictureStore sharedStore] allThumbnails] count]);
+    [cell setContentMode:UIViewContentModeScaleAspectFill];
     
     return cell;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[[MementoPictureStore sharedStore] allPictures] count];
+    return [[[MementoPictureStore sharedStore] allThumbnails] count];
 }
 
 @end

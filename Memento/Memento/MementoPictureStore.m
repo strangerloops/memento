@@ -31,20 +31,21 @@
 {
     self = [super init];
     if(self){
-        allPictures = [[NSMutableArray alloc] init];
+        _allPictures = [[NSMutableArray alloc] init];
+        _allThumbnails = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
-- (NSArray *)allPictures
-{
-    return allPictures;
-}
-
 - (void)addPicture:(UIImage *)p
 {
     [[[MementoPictureStore sharedStore] allPictures] addObject:p];
+}
+
+- (void)addThumbnail:(UIImage *)t
+{
+    [[[MementoPictureStore sharedStore] allThumbnails] addObject:t];
 }
 
 @end
