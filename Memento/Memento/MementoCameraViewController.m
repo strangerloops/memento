@@ -8,6 +8,7 @@
 
 #import "MementoCameraViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "MementoPictureStore.h"
 
 @implementation MementoCameraViewController
 
@@ -70,11 +71,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
         _imageView.image = image;
-        if (_newMedia)
+        if (_newMedia){
             UIImageWriteToSavedPhotosAlbum(image,
                                            self,
                                            @selector(image:finishedSavingWithError:contextInfo:),
                                            nil);
+            
+            // adds the taken picture to sharedstore
+            [[MementoPictureStore sharedStore] addPicture:image];
+            
+        }
     }
 
 }
