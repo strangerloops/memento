@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate> {
     IBOutlet UICollectionView *gridView;
 }
+
+- (void)showCameraMenu:(id)sender;
 
 @end

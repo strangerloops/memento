@@ -24,6 +24,8 @@
 }
 
 - (void)viewDidLoad {
+    // Set up the grid
+    
     [gridView setDataSource:self];
     [gridView setDelegate:self];
     [gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
@@ -34,7 +36,10 @@
     
     [gridView setCollectionViewLayout:flowLayout];
     
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showCameraMenu)]];
+    // Set up the navigation bar
+    
+    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showCameraMenu:)]];
+    [[self navigationItem] setTitle:@"Photos"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -42,6 +47,14 @@
     // iterate through sharedstore's array of pictures, display
     [gridView reloadData];
     NSLog(@"Data was reloaded apparently", nil);
+}
+
+- (void)showCameraMenu:(id)sender {
+    // Show an action sheet with three options
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a photo", @"Choose existing photo", @"Use last photo taken", nil];
+    [actionSheet setActionSheetStyle:UIActionSheetStyleDefault];
+    [actionSheet showInView:[self view]];
 }
 
 // UICollectionViewDataSource protocol methods
