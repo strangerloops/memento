@@ -7,7 +7,7 @@
 //
 
 #import "MementoAppDelegate.h"
-#import "MementoTimelineViewController.h"
+#import "MementoGridViewController.h"
 #import "MementoMapViewController.h"
 #import "MementoCameraViewController.h"
 
@@ -18,7 +18,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    MementoTimelineViewController *tvc = [[MementoTimelineViewController alloc] init];
+    MementoGridViewController *tvc = [[MementoGridViewController alloc] init];
     MementoMapViewController *svc = [[MementoMapViewController alloc] init];
     MementoCameraViewController *cvc = [[MementoCameraViewController alloc] init];
     
