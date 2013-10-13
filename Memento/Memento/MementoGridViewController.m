@@ -24,7 +24,7 @@
     self = [super initWithNibName:@"MementoGridViewController" bundle:appBundle];
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
-        [tbi setTitle:@"Photos"];
+        [tbi setTitle:@"Memento"];
         locationManager = [CLLocationManager new];
         [locationManager setDelegate:self];
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
