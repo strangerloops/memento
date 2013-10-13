@@ -18,17 +18,43 @@
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Timeline"];
-        
-        //        UIImage *i = [UIImage imageNamed:@"Records.png"];
-        //        [tbi setImage:i];
     }
     
     return self;
 }
 
+- (void)viewDidLoad {
+    [gridView setDataSource:self];
+    [gridView setDelegate:self];
+    [gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
+
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setItemSize:CGSizeMake(200, 200)];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    [gridView setCollectionViewLayout:flowLayout];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
-    // iterate through sharedstore's array of pictures, display 
+    // iterate through sharedstore's array of pictures, display
+    [gridView reloadData];
+    NSLog(@"Data was reloaded apparently", nil);
+}
+
+// UICollectionViewDataSource protocol methods
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[[[MementoPictureStore sharedStore] allPictures] objectAtIndex:[indexPath row]]];
+    [[cell contentView] addSubview:imageView];
+    NSLog(@"%d", [[[MementoPictureStore sharedStore] allPictures] count]);
+    
+    return cell;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[[MementoPictureStore sharedStore] allPictures] count];
 }
 
 @end

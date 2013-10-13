@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoGridViewController : UIViewController {
-    IBOutlet UICollectionView *collectionView;
+@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+    IBOutlet UICollectionView *gridView;
 }
 
 @end

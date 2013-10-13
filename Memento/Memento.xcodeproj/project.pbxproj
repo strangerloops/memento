@@ -271,7 +271,7 @@
 				ORGANIZATIONNAME = strangerware;
 				TargetAttributes = {
 					AA69692F1809F63C00FDCB16 = {
-						DevelopmentTeam = HDC59YG25D;
+						DevelopmentTeam = TTRRU3DK65;
 					};
 					AA69694A1809F63C00FDCB16 = {
 						TestTargetID = AA69692F1809F63C00FDCB16;

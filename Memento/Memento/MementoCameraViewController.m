@@ -64,8 +64,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
@@ -75,13 +73,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                            self,
                                            @selector(image:finishedSavingWithError:contextInfo:),
                                            nil);
-            
-            // adds the taken picture to sharedstore
-            [[MementoPictureStore sharedStore] addPicture:image];
-            
         }
+        
+        // adds the taken picture to sharedstore
+        [[MementoPictureStore sharedStore] addPicture:image];
+        NSLog(@"%i", [[[MementoPictureStore sharedStore] allPictures] count]);
     }
-
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)image:(UIImage *)image

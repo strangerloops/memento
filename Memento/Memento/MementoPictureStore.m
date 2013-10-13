@@ -47,20 +47,4 @@
     [[[MementoPictureStore sharedStore] allPictures] addObject:p];
 }
 
-// UICollectionViewDataSource protocol methods
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"Cell";
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    
-    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    recipeImageView.image = [UIImage imageNamed:[[[MementoPictureStore sharedStore] allPictures] objectAtIndex:indexPath.row]];
-    
-    return cell;
-}
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[[MementoPictureStore sharedStore] allPictures] count];
-}
-
 @end
