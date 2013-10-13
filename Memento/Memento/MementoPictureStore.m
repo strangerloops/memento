@@ -7,6 +7,7 @@
 //
 
 #import "MementoPictureStore.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation MementoPictureStore
 
@@ -33,6 +34,7 @@
     if(self){
         _allPictures = [[NSMutableArray alloc] init];
         _allThumbnails = [[NSMutableArray alloc] init];
+        _allLocations = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -47,5 +49,23 @@
 {
     [[[MementoPictureStore sharedStore] allThumbnails] addObject:t];
 }
+
+- (void)addLocation:(MementoLocationCoordinate2D *)l
+{
+    [[[MementoPictureStore sharedStore] allLocations] addObject:l];
+    NSLog(@"lastObject: %@", [[[MementoPictureStore sharedStore] allLocations] lastObject]);
+}
+
+@end
+
+@implementation MementoLocationCoordinate2D
+
+- (id)initWithLocation:(CLLocationCoordinate2D)l {
+    if (self = [super init]) {
+        location = l;
+    }
+    
+    return self;
+ }
 
 @end

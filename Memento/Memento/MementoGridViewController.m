@@ -10,6 +10,11 @@
 #import "MementoPictureStore.h"
 #import "MementoPhotoViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <AssetsLibrary/ALAsset.h>
+#import <AssetsLibrary/ALAssetRepresentation.h>
+#import <ImageIO/CGImageSource.h>
+#import <ImageIO/CGImageProperties.h>
+#import <CoreLocation/CoreLocation.h>
 
 @implementation MementoGridViewController
 
@@ -20,6 +25,9 @@
     if (self){
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Photos"];
+        locationManager = [CLLocationManager new];
+        [locationManager setDelegate:self];
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     }
     
     return self;
@@ -31,7 +39,7 @@
     [gridView setDataSource:self];
     [gridView setDelegate:self];
     [gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
-
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(100, 100)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -78,6 +86,8 @@
                 [self presentViewController:imagePicker
                                    animated:YES completion:nil];
                 _newMedia = YES;
+                
+                [locationManager startUpdatingLocation]; // Begin polling location
             }
             break;
         case 1: // Choose existing photo
@@ -113,17 +123,58 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
         if (_newMedia){
-            UIImageWriteToSavedPhotosAlbum(image,
-                                           self,
-                                           @selector(image:finishedSavingWithError:contextInfo:),
-                                           nil);
+            ALAssetsLibrary *lib = [ALAssetsLibrary new];
+            void (^libBlock)(NSURL*,NSError*) = ^(NSURL *assetURL, NSError *error) {
+                ALAssetsLibrary *al = [ALAssetsLibrary new];
+                [al assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+                    UIImage *image = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]];
+                    [[MementoPictureStore sharedStore] addPicture:image];
+                    UIImage *thumbnail = [MementoGridViewController thumbnailOf:image];
+                    [[MementoPictureStore sharedStore] addThumbnail:thumbnail];
+                    CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
+                    MementoLocationCoordinate2D *mLocation = [[MementoLocationCoordinate2D alloc] initWithLocation:location.coordinate];
+                    [[MementoPictureStore sharedStore] addLocation:mLocation];
+                } failureBlock:nil];
+            };
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:info[UIImagePickerControllerMediaMetadata]];
+            NSMutableDictionary *gps = [NSMutableDictionary new];
+            NSDateFormatter *df = [[NSDateFormatter alloc] init];
+            if (_deviceLocation.coordinate.latitude < 0.0) {
+                gps[(__bridge NSString *)kCGImagePropertyGPSLatitude] = [NSNumber numberWithFloat:-_deviceLocation.coordinate.latitude];
+                gps[(__bridge NSString *)kCGImagePropertyGPSLatitudeRef] = @"S";
+            } else {
+                gps[(__bridge NSString *)kCGImagePropertyGPSLatitude] = [NSNumber numberWithFloat:_deviceLocation.coordinate.latitude];
+                gps[(__bridge NSString *)kCGImagePropertyGPSLatitudeRef] = @"N";
+            }
+            if (_deviceLocation.coordinate.longitude < 0.0) {
+                gps[(__bridge NSString *)kCGImagePropertyGPSLongitude] = [NSNumber numberWithFloat:-_deviceLocation.coordinate.longitude];
+                gps[(__bridge NSString *)kCGImagePropertyGPSLongitudeRef] = @"W";
+            } else {
+                gps[(__bridge NSString *)kCGImagePropertyGPSLongitude] = [NSNumber numberWithFloat:_deviceLocation.coordinate.longitude];
+                gps[(__bridge NSString *)kCGImagePropertyGPSLongitudeRef] = @"E";
+            }
+            df.dateFormat = @"yyyy:MM:dd";
+            gps[(__bridge NSString *)kCGImagePropertyGPSDateStamp] = [df stringFromDate:[NSDate date]];
+            df.dateFormat = @"HH:mm:ss";
+            gps[(__bridge NSString *)kCGImagePropertyGPSTimeStamp] = [df stringFromDate:[NSDate date]];
+            dict[(__bridge NSString *)kCGImagePropertyGPSDictionary] = gps;
+            UIImage *img = info[UIImagePickerControllerEditedImage] ? info[UIImagePickerControllerEditedImage] : info[UIImagePickerControllerOriginalImage];
+            [lib writeImageToSavedPhotosAlbum:img.CGImage metadata:dict completionBlock:libBlock];
+        } else {
+            ALAssetsLibrary *al = [ALAssetsLibrary new];
+            [al assetForURL:info[UIImagePickerControllerReferenceURL] resultBlock:^(ALAsset *asset) {
+                UIImage *image = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]];
+                [[MementoPictureStore sharedStore] addPicture:image];
+                UIImage *thumbnail = [MementoGridViewController thumbnailOf:image];
+                [[MementoPictureStore sharedStore] addThumbnail:thumbnail];
+                CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
+                MementoLocationCoordinate2D *mLocation = [[MementoLocationCoordinate2D alloc] initWithLocation:location.coordinate];
+                [[MementoPictureStore sharedStore] addLocation:mLocation];
+            } failureBlock:nil];
+            return;
         }
         
-        UIImage *thumbnail = [MementoGridViewController thumbnailOf:image];
-        
-        // add the taken picture to sharedstore
-        [[MementoPictureStore sharedStore] addPicture:image];
-        [[MementoPictureStore sharedStore] addThumbnail:thumbnail];
+        [locationManager stopUpdatingLocation];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -156,7 +207,7 @@ finishedSavingWithError:(NSError *)error
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[[[MementoPictureStore sharedStore] allThumbnails] objectAtIndex:[indexPath row]]];
     [[cell contentView] addSubview:imageView];
-    NSLog(@"%d", [[[MementoPictureStore sharedStore] allThumbnails] count]);
+    NSLog(@"%lu", (unsigned long)[[[MementoPictureStore sharedStore] allThumbnails] count]);
     [cell setContentMode:UIViewContentModeScaleAspectFill];
     
     return cell;
@@ -169,9 +220,15 @@ finishedSavingWithError:(NSError *)error
 // UICollectionViewDelegate protocol methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    MementoPhotoViewController *photoVC = [[MementoPhotoViewController alloc] initWithPhoto:[[[MementoPictureStore sharedStore] allPictures] objectAtIndex:[indexPath row]]];
+    MementoPhotoViewController *photoVC = [[MementoPhotoViewController alloc] initWithPhoto:[[[MementoPictureStore sharedStore] allPictures] objectAtIndex:[indexPath row]] andIndex:[indexPath row]];
     NSLog(@"%d", [indexPath row]);
     [[self navigationController] pushViewController:photoVC animated:YES];
+}
+
+// CLLocationManagerDelegate protocol methods
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [self setDeviceLocation:[locations lastObject]];
 }
 
 // Class methods

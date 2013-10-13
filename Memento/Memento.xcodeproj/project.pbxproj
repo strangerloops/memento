@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2FCECB71180AA9CD00B020D4 /* MementoPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCECB6F180AA9CD00B020D4 /* MementoPhotoViewController.m */; };
 		2FCECB72180AA9CD00B020D4 /* MementoPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCECB70180AA9CD00B020D4 /* MementoPhotoViewController.xib */; };
+		2FCECB74180AC10200B020D4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCECB73180AC10200B020D4 /* CoreLocation.framework */; };
+		2FCECB76180AC12E00B020D4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCECB75180AC12E00B020D4 /* MapKit.framework */; };
+		2FCECB78180AC7EC00B020D4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCECB77180AC7EC00B020D4 /* ImageIO.framework */; };
 		AA6969341809F63C00FDCB16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969331809F63C00FDCB16 /* Foundation.framework */; };
 		AA6969361809F63C00FDCB16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969351809F63C00FDCB16 /* CoreGraphics.framework */; };
 		AA6969381809F63C00FDCB16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969371809F63C00FDCB16 /* UIKit.framework */; };
@@ -44,6 +47,10 @@
 		2FCECB6E180AA9CD00B020D4 /* MementoPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoPhotoViewController.h; sourceTree = "<group>"; };
 		2FCECB6F180AA9CD00B020D4 /* MementoPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoPhotoViewController.m; sourceTree = "<group>"; };
 		2FCECB70180AA9CD00B020D4 /* MementoPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoPhotoViewController.xib; sourceTree = "<group>"; };
+		2FCECB73180AC10200B020D4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2FCECB75180AC12E00B020D4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2FCECB77180AC7EC00B020D4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		2FCECB79180AD92D00B020D4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		AA6969301809F63C00FDCB16 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6969331809F63C00FDCB16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA6969351809F63C00FDCB16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -78,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCECB78180AC7EC00B020D4 /* ImageIO.framework in Frameworks */,
+				2FCECB76180AC12E00B020D4 /* MapKit.framework in Frameworks */,
+				2FCECB74180AC10200B020D4 /* CoreLocation.framework in Frameworks */,
 				AAE6F92D180A19730012FE45 /* MobileCoreServices.framework in Frameworks */,
 				AA6969361809F63C00FDCB16 /* CoreGraphics.framework in Frameworks */,
 				AA6969381809F63C00FDCB16 /* UIKit.framework in Frameworks */,
@@ -130,6 +140,10 @@
 		AA6969321809F63C00FDCB16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FCECB79180AD92D00B020D4 /* AssetsLibrary.framework */,
+				2FCECB77180AC7EC00B020D4 /* ImageIO.framework */,
+				2FCECB75180AC12E00B020D4 /* MapKit.framework */,
+				2FCECB73180AC10200B020D4 /* CoreLocation.framework */,
 				AAE6F92C180A19730012FE45 /* MobileCoreServices.framework */,
 				AA6969331809F63C00FDCB16 /* Foundation.framework */,
 				AA6969351809F63C00FDCB16 /* CoreGraphics.framework */,

@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class MementoCameraViewController;
 
-@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate> {
+@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate> {
     IBOutlet UICollectionView *gridView;
+    CLLocationManager *locationManager;
 }
 
 @property BOOL newMedia;
-@property (strong, nonatomic) MementoCameraViewController *cameraVC;
+@property (nonatomic) CLLocation *deviceLocation;
 
 - (void)showCameraMenu:(id)sender;
 + (UIImage *)thumbnailOf:(UIImage *)image;

@@ -13,9 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (strong, nonatomic) UIImage *photo;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (nonatomic) NSInteger index;
 
 // Inits
-- (id)initWithPhoto:(UIImage *)photo;
+- (id)initWithPhoto:(UIImage *)photo andIndex:(NSInteger)index;
 
 // Instance methods
 - (IBAction)takeMeThere:(id)sender;

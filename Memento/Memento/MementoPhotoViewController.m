@@ -7,6 +7,10 @@
 //
 
 #import "MementoPhotoViewController.h"
+#import "MementoPictureStore.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <ImageIO/ImageIO.h>
 
 @interface MementoPhotoViewController ()
 
@@ -23,9 +27,10 @@
     return self;
 }
 
-- (id)initWithPhoto:(UIImage *)photo {
+- (id)initWithPhoto:(UIImage *)photo andIndex:(NSInteger)index {
     self = [self initWithNibName:nil bundle:nil];
     [self setPhoto:photo];
+    [self setIndex:index];
     
     return self;
 }
@@ -43,6 +48,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)takeMeThere:(id)sender {
+    
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
+        MementoLocationCoordinate2D *mLocation = [[[MementoPictureStore sharedStore] allLocations] objectAtIndex:[self index]];
+        NSLog(@"indexpath: %d", [self index]);
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:mLocation->location addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+        [mapItem setName:@"My Place"];
+        NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+        MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+        [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
+                       launchOptions:launchOptions];
+    }
 }
 
 @end
