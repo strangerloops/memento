@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate> {
+@class MementoCameraViewController;
+
+@interface MementoGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UICollectionView *gridView;
 }
 
+@property BOOL newMedia;
+@property (strong, nonatomic) MementoCameraViewController *cameraVC;
+
 - (void)showCameraMenu:(id)sender;
++ (UIImage *)thumbnailOf:(UIImage *)image;
 
 @end

@@ -9,7 +9,6 @@
 #import "MementoAppDelegate.h"
 #import "MementoGridViewController.h"
 #import "MementoMapViewController.h"
-#import "MementoCameraViewController.h"
 
 @implementation MementoAppDelegate
 
@@ -19,6 +18,7 @@
     // Override point for customization after application launch.
     
     MementoGridViewController *gridVC = [[MementoGridViewController alloc] init];
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:gridVC];
     
     [[self window] setRootViewController:navigationController];
