@@ -18,8 +18,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    MementoGridViewController *tvc = [[MementoGridViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tvc];
+    MementoGridViewController *gridVC = [[MementoGridViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:gridVC];
     
     [[self window] setRootViewController:navigationController];
     
