@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FCECB71180AA9CD00B020D4 /* MementoPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCECB6F180AA9CD00B020D4 /* MementoPhotoViewController.m */; };
+		2FCECB72180AA9CD00B020D4 /* MementoPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCECB70180AA9CD00B020D4 /* MementoPhotoViewController.xib */; };
 		AA6969341809F63C00FDCB16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969331809F63C00FDCB16 /* Foundation.framework */; };
 		AA6969361809F63C00FDCB16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969351809F63C00FDCB16 /* CoreGraphics.framework */; };
 		AA6969381809F63C00FDCB16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6969371809F63C00FDCB16 /* UIKit.framework */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FCECB6E180AA9CD00B020D4 /* MementoPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MementoPhotoViewController.h; sourceTree = "<group>"; };
+		2FCECB6F180AA9CD00B020D4 /* MementoPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MementoPhotoViewController.m; sourceTree = "<group>"; };
+		2FCECB70180AA9CD00B020D4 /* MementoPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MementoPhotoViewController.xib; sourceTree = "<group>"; };
 		AA6969301809F63C00FDCB16 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6969331809F63C00FDCB16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA6969351809F63C00FDCB16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FCECB6D180AA9AE00B020D4 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				2FCECB6E180AA9CD00B020D4 /* MementoPhotoViewController.h */,
+				2FCECB6F180AA9CD00B020D4 /* MementoPhotoViewController.m */,
+				2FCECB70180AA9CD00B020D4 /* MementoPhotoViewController.xib */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
 		AA6969271809F63C00FDCB16 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +204,7 @@
 		AAE6F92E180A205C0012FE45 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FCECB6D180AA9AE00B020D4 /* Photo */,
 				AAE6F91F1809FE630012FE45 /* Grid */,
 				AAE6F91E1809FE490012FE45 /* Map */,
 			);
@@ -285,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCECB72180AA9CD00B020D4 /* MementoPhotoViewController.xib in Resources */,
 				AA69693E1809F63C00FDCB16 /* InfoPlist.strings in Resources */,
 				AAE6F923180A017F0012FE45 /* MementoGridViewController.xib in Resources */,
 				AA6969461809F63C00FDCB16 /* Images.xcassets in Resources */,
@@ -309,6 +326,7 @@
 			files = (
 				AA6969441809F63C00FDCB16 /* MementoAppDelegate.m in Sources */,
 				AAE6F931180A20A00012FE45 /* MementoPicture.m in Sources */,
+				2FCECB71180AA9CD00B020D4 /* MementoPhotoViewController.m in Sources */,
 				AAE6F91D1809FE400012FE45 /* MementoGridViewController.m in Sources */,
 				AAE6F935180A23860012FE45 /* MementoPictureStore.m in Sources */,
 				AAE6F91A1809FE320012FE45 /* MementoMapViewController.m in Sources */,

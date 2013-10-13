@@ -8,6 +8,7 @@
 
 #import "MementoGridViewController.h"
 #import "MementoPictureStore.h"
+#import "MementoPhotoViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @implementation MementoGridViewController
@@ -123,7 +124,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         // add the taken picture to sharedstore
         [[MementoPictureStore sharedStore] addPicture:image];
         [[MementoPictureStore sharedStore] addThumbnail:thumbnail];
-        NSLog(@"%i", [[[MementoPictureStore sharedStore] allThumbnails] count]);
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -164,6 +164,14 @@ finishedSavingWithError:(NSError *)error
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [[[MementoPictureStore sharedStore] allThumbnails] count];
+}
+
+// UICollectionViewDelegate protocol methods
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MementoPhotoViewController *photoVC = [[MementoPhotoViewController alloc] initWithPhoto:[[[MementoPictureStore sharedStore] allThumbnails] objectAtIndex:[indexPath row]]];
+    NSLog(@"%d", [indexPath row]);
+    [[self navigationController] pushViewController:photoVC animated:YES];
 }
 
 // Class methods
