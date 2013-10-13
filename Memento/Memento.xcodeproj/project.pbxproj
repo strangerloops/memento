@@ -171,24 +171,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AAE6F91E1809FE490012FE45 /* Space */ = {
+		AAE6F91E1809FE490012FE45 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				AAE6F9181809FE320012FE45 /* MementoMapViewController.h */,
 				AAE6F9191809FE320012FE45 /* MementoMapViewController.m */,
 				AAE6F924180A01EA0012FE45 /* MementoMapViewController.xib */,
 			);
-			name = Space;
+			name = Map;
 			sourceTree = "<group>";
 		};
-		AAE6F91F1809FE630012FE45 /* Time */ = {
+		AAE6F91F1809FE630012FE45 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
 				AAE6F91B1809FE400012FE45 /* MementoGridViewController.h */,
 				AAE6F91C1809FE400012FE45 /* MementoGridViewController.m */,
 				AAE6F922180A017F0012FE45 /* MementoGridViewController.xib */,
 			);
-			name = Time;
+			name = Grid;
 			sourceTree = "<group>";
 		};
 		AAE6F929180A08360012FE45 /* Camera */ = {
@@ -204,8 +204,8 @@
 		AAE6F92E180A205C0012FE45 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AAE6F91F1809FE630012FE45 /* Time */,
-				AAE6F91E1809FE490012FE45 /* Space */,
+				AAE6F91F1809FE630012FE45 /* Grid */,
+				AAE6F91E1809FE490012FE45 /* Map */,
 				AAE6F929180A08360012FE45 /* Camera */,
 			);
 			name = Views;
